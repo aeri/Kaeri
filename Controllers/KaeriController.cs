@@ -32,7 +32,7 @@ namespace Kaeri.Controllers
         [HttpGet("{key}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<KaeriObjectDto> Get(int key)
+        public ActionResult<KaeriObjectDto> Get(string key)
         {
             var kobject = data.Find(x => x.Key.Equals(key));
 
@@ -79,7 +79,7 @@ namespace Kaeri.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [HttpPut("{key}")]
-        public IActionResult Put(int key, KaeriObject kobject)
+        public IActionResult Put(string key, KaeriObject kobject)
         {
             if (key != kobject.Key)
             {
@@ -120,7 +120,7 @@ namespace Kaeri.Controllers
         [HttpDelete("{key}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Delete(int key)
+        public IActionResult Delete(string key)
         {
 
             var kobject = data.Find(x => x.Key.Equals(key));

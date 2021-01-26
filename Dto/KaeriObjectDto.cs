@@ -8,7 +8,7 @@ namespace Kaeri.Dto
 {
     public class KaeriObjectDto
     {
-        public int Key { get; set; }
+        public string Key { get; set; }
         public string Value { get; set; }
         public DateTime Created { get; set; }
     }
