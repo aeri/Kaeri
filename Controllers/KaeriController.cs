@@ -14,7 +14,7 @@ namespace Kaeri.Controllers
 {
     [Route("api")]
     [ApiController]
-    public class KaoriController : ControllerBase
+    public class KaeriController : ControllerBase
     {
 
         //Dictionary<int, string> data = new Dictionary<int, string>();

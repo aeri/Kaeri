@@ -32,7 +32,18 @@ namespace Kaeri
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Kaeri", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "Kaeri",
+                    Version = "v1",
+                    Description = "The real public temporal REST API endpoint.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = @"GitHub Repository",
+                        Email = string.Empty,
+                        Url = new Uri("https://github.com/aeri/Kaeri")
+                    }
+                });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -49,10 +60,12 @@ namespace Kaeri
 
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Kaeri v1"));
+                app.UseDeveloperExceptionPage();
+
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Kaeri v1"));
 
             app.UseHttpsRedirection();
 
