@@ -2,8 +2,8 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+#EXPOSE 80
+#EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
@@ -19,4 +19,5 @@ RUN dotnet publish "Kaeri.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Kaeri.dll"]
+#ENTRYPOINT ["dotnet", "Kaeri.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Kaeri.dll
