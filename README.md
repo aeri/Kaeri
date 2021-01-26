@@ -3,15 +3,15 @@
   </a>
 </p>
 
-# Kaori Endpoint
+# Kaeri Endpoint
 
-## What's Kaori?
+## What's Kaeri?
 
-Kaori is an open source public API for testing and development purposes that holds the data in memory and deletes it periodically. Nothing is saved on the server.
+Kaeri is an open source public API for testing and development purposes that holds the data in memory and deletes it periodically. Nothing is saved on the server.
 
 The proyect is for everyone that needs to check REST API Rest iterations in their proyects, use this endpoint to test you applications and develop around
 a functional and complete REST service.
 
 ## Continuous delivery
 For provide an available and auditable service, in each commit of this repository a Docker container 
-will be build to be published in the free SaaS provider Heroku that will hosts this proyect.
+will be build to be published in the free SaaS provider Heroku that will hosts this project.
